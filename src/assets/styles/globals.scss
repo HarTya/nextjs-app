@@ -45,18 +45,22 @@ body {
 		}
 	}
 	main {
-		animation: ShowBodyBackground 6s ease-in-out infinite;
+		animation: ShowBodyBackground 4s ease-in-out infinite;
 		@keyframes ShowBodyBackground {
 			0%,
-			50% {
-				transform: translateY(0);
+			75% {
+				transform: skew(0deg, 0deg);
 			}
-			60%,
-			90% {
-				transform: translateY(100px);
+			80%,
+			85% {
+				transform: skew(2deg, -2deg) scale(0.9);
+			}
+			90%,
+			95% {
+				transform: skew(2deg, 2deg) scale(0.9);
 			}
 			100% {
-				transform: translateY(0);
+				transform: skew(0deg, 0deg);
 			}
 		}
 	}
