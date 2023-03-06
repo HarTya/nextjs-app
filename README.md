@@ -1,0 +1,1 @@
+# XarTya / NextJS Default App

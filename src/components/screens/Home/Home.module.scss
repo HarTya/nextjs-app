@@ -1,0 +1,34 @@
+@import '@/styles/_variables.scss';
+
+.home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+	animation: Home 2s ease-in-out forwards;
+	@keyframes Home {
+		from {
+			background: $primary;
+			color: transparent;
+		}
+		to {
+			background: $additional;
+			color: $primary;
+		}
+	}
+	&_text {
+		animation: HomeText 2.5s ease-in-out forwards;
+		@keyframes HomeText {
+			0%,
+			75% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+}

@@ -1,0 +1,76 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	cursor: default;
+}
+
+*::selection {
+	background-color: transparent;
+}
+
+a {
+	color: currentColor;
+}
+
+button {
+	background: transparent;
+}
+
+body {
+	margin: 0;
+	font-family: 'Cascadia Code';
+	overflow: hidden;
+	animation: RotateBodyBackground 1s ease-in-out infinite;
+	@keyframes RotateBodyBackground {
+		from {
+			background: linear-gradient(
+				90deg,
+				rgba(131, 58, 180, 1) 0%,
+				rgba(197, 42, 98, 1) 25%,
+				rgba(253, 29, 29, 1) 50%,
+				rgba(252, 176, 69, 1) 100%
+			);
+		}
+		to {
+			background: linear-gradient(
+				180deg,
+				rgba(131, 58, 180, 1) 0%,
+				rgba(197, 42, 98, 1) 25%,
+				rgba(253, 29, 29, 1) 50%,
+				rgba(252, 176, 69, 1) 100%
+			);
+		}
+	}
+	main {
+		animation: ShowBodyBackground 6s ease-in-out infinite;
+		@keyframes ShowBodyBackground {
+			0%,
+			50% {
+				transform: translateY(0);
+			}
+			60%,
+			90% {
+				transform: translateY(100px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+	}
+}
+
+.disappearance {
+	pointer-events: none;
+	animation: Disappear 1s ease-in-out forwards;
+	@keyframes Disappear {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+}

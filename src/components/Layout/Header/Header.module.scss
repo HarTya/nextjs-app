@@ -1,0 +1,52 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100px;
+	padding: 0 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	animation: ShowHeader 2s ease-in-out forwards;
+	@keyframes ShowHeader {
+		from {
+			transform: translateY(-100%);
+		}
+		0%,
+		99% {
+			pointer-events: none;
+		}
+		to {
+			transform: translateY(0);
+		}
+	}
+	&_hide {
+		pointer-events: none;
+		animation: HideHeader 1s ease-in-out forwards;
+		@keyframes HideHeader {
+			from {
+				transform: translateY(0);
+			}
+			to {
+				transform: translateY(-100%);
+			}
+		}
+	}
+	&_text {
+		font-size: 30px;
+		animation: RotateHeaderText 3s ease-in-out infinite;
+		@keyframes RotateHeaderText {
+			0% {
+				transform: skew(6deg, 4deg) rotate(10deg);
+			}
+			50% {
+				transform: skew(-3deg, -2deg) rotate(-10deg);
+			}
+			100% {
+				transform: skew(6deg, 4deg) rotate(10deg);
+			}
+		}
+	}
+}

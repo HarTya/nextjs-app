@@ -1,0 +1,36 @@
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100px;
+	padding: 0 50px;
+	display: flex;
+	align-items: center;
+	animation: ShowFooter 2s ease-in-out forwards;
+	@keyframes ShowFooter {
+		from {
+			transform: translateY(100%);
+		}
+		0%,
+		99% {
+			pointer-events: none;
+		}
+		to {
+			transform: translateY(0);
+		}
+	}
+	&_hide {
+		pointer-events: none;
+		animation: HideFooter 1s ease-in-out forwards;
+		@keyframes HideFooter {
+			from {
+				transform: translateY(0);
+			}
+			to {
+				transform: translateY(100%);
+			}
+		}
+	}
+}
