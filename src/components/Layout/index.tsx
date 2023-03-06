@@ -9,8 +9,8 @@ const Layout: FC<PropsWithChildren<ILayout>> = ({ children, ...rest }) => {
 		<>
 			<Meta {...rest} />
 			<Header {...rest} />
-			<Footer {...rest} />
 			<main>{children}</main>
+			<Footer {...rest} />
 		</>
 	)
 }
