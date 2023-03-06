@@ -11,59 +11,10 @@
 	background-color: transparent;
 }
 
-a {
-	color: currentColor;
-}
-
-button {
-	background: transparent;
-}
-
 body {
 	margin: 0;
 	font-family: 'Cascadia Code';
 	overflow: hidden;
-	animation: RotateBodyBackground 1s ease-in-out infinite;
-	@keyframes RotateBodyBackground {
-		from {
-			background: linear-gradient(
-				90deg,
-				rgba(131, 58, 180, 1) 0%,
-				rgba(197, 42, 98, 1) 25%,
-				rgba(253, 29, 29, 1) 50%,
-				rgba(252, 176, 69, 1) 100%
-			);
-		}
-		to {
-			background: linear-gradient(
-				180deg,
-				rgba(131, 58, 180, 1) 0%,
-				rgba(197, 42, 98, 1) 25%,
-				rgba(253, 29, 29, 1) 50%,
-				rgba(252, 176, 69, 1) 100%
-			);
-		}
-	}
-	main {
-		animation: ShowBodyBackground 4s ease-in-out infinite;
-		@keyframes ShowBodyBackground {
-			0%,
-			75% {
-				transform: skew(0deg, 0deg);
-			}
-			80%,
-			85% {
-				transform: skew(2deg, -2deg) scale(0.9);
-			}
-			90%,
-			95% {
-				transform: skew(2deg, 2deg) scale(0.9);
-			}
-			100% {
-				transform: skew(0deg, 0deg);
-			}
-		}
-	}
 }
 
 .disappearance {

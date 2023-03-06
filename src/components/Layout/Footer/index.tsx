@@ -33,7 +33,7 @@ const Footer: FC<IFooter> = ({ page }) => {
 			<div onClick={() => switchPage('/api/status')}>
 				<Button
 					color={isHomePage ? COLORS.primary : COLORS.additional}
-					text='Status'
+					text='✔'
 					size={20}
 				/>
 			</div>
