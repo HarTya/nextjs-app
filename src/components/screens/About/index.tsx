@@ -7,7 +7,7 @@ const About: FC = () => {
 	const isPageSwitching = useStore(state => state.isPageSwitching)
 
 	return (
-		<Layout title='About' description='About Page' page='about'>
+		<Layout title='About' description='About Page'>
 			<div className={styles.about}>
 				<h1 className={isPageSwitching ? 'disappearance' : styles.about_text}>
 					NextJS Default App

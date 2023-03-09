@@ -1,3 +1,4 @@
 export interface IHeader {
-	page: 'home' | 'about'
+	isHomePage: boolean
+	switchPage: (href: string) => void
 }

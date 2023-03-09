@@ -7,7 +7,7 @@ const Home: FC = () => {
 	const isPageSwitching = useStore(state => state.isPageSwitching)
 
 	return (
-		<Layout title='Home' description='Home Page' page='home'>
+		<Layout title='Home' description='Home Page'>
 			<div className={styles.home}>
 				<h1 className={isPageSwitching ? 'disappearance' : styles.home_text}>
 					Hello World!

@@ -1,26 +1,16 @@
 import Button from '@/components/UI/Button'
 import { COLORS } from 'config/color.config'
+import { ABOUT_PAGE, HOME_PAGE } from 'config/pages.config'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 import { useStore } from 'store'
 import { IHeader } from './header.interface'
 import styles from './Header.module.scss'
 
-const Header: FC<IHeader> = ({ page }) => {
-	const [isPageSwitching, setIsPageSwitching] = useStore(state => [
-		state.isPageSwitching,
-		state.setIsPageSwitching
-	])
-	const router = useRouter()
-	const isHomePage = page === 'home'
+const Header: FC<IHeader> = ({ isHomePage, switchPage }) => {
+	const isPageSwitching = useStore(state => state.isPageSwitching)
 
-	function switchPage(href: string) {
-		setIsPageSwitching(true)
-		setTimeout(() => {
-			router.push(href)
-			setIsPageSwitching(false)
-		}, 1000)
-	}
+	const { asPath } = useRouter()
 
 	return (
 		<div
@@ -34,14 +24,14 @@ const Header: FC<IHeader> = ({ page }) => {
 				style={{ color: isHomePage ? COLORS.primary : COLORS.additional }}
 				className={styles.header_text}
 			>
-				{router.asPath}
+				{asPath}
 			</span>
 			{isHomePage ? (
-				<div onClick={() => switchPage('/about')}>
+				<div onClick={() => switchPage(ABOUT_PAGE)}>
 					<Button color={COLORS.primary} text='>' />
 				</div>
 			) : (
-				<div onClick={() => switchPage('/')}>
+				<div onClick={() => switchPage(HOME_PAGE)}>
 					<Button color={COLORS.additional} text='<' />
 				</div>
 			)}
