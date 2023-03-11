@@ -8,10 +8,8 @@ const Home: FC = () => {
 
 	return (
 		<Layout title='Home' description='Home Page'>
-			<div className={styles.home}>
-				<h1 className={isPageSwitching ? 'disappearance' : styles.home_text}>
-					Hello World!
-				</h1>
+			<div className={`${styles.home} screen`}>
+				<h1 className={isPageSwitching ? 'hide' : null}>Hello World!</h1>
 			</div>
 		</Layout>
 	)

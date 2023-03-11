@@ -1,11 +1,6 @@
 @import '@/styles/_variables.scss';
 
 .about {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	text-align: center;
 	animation: About 2s ease-in-out forwards;
 	@keyframes About {
 		from {
@@ -15,20 +10,6 @@
 		to {
 			background: $primary;
 			color: $additional;
-		}
-	}
-	&_text {
-		animation: AboutText 2.5s ease-in-out forwards;
-		@keyframes AboutText {
-			0%,
-			75% {
-				opacity: 0;
-				transform: scale(0);
-			}
-			100% {
-				opacity: 1;
-				transform: scale(1);
-			}
 		}
 	}
 }

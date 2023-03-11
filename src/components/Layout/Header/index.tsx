@@ -26,15 +26,12 @@ const Header: FC<IHeader> = ({ isHomePage, switchPage }) => {
 			>
 				{asPath}
 			</span>
-			{isHomePage ? (
-				<div onClick={() => switchPage(ABOUT_PAGE)}>
-					<Button color={COLORS.primary} text='>' />
-				</div>
-			) : (
-				<div onClick={() => switchPage(HOME_PAGE)}>
-					<Button color={COLORS.additional} text='<' />
-				</div>
-			)}
+			<div onClick={() => switchPage(isHomePage ? ABOUT_PAGE : HOME_PAGE)}>
+				<Button
+					color={isHomePage ? COLORS.primary : COLORS.additional}
+					text={isHomePage ? '>' : '<'}
+				/>
+			</div>
 		</div>
 	)
 }

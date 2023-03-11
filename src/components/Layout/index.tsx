@@ -26,7 +26,7 @@ const Layout: FC<PropsWithChildren<ILayout>> = ({ children, ...rest }) => {
 			<Meta {...rest} />
 			<Header isHomePage={isHomePage} switchPage={switchPage} />
 			<main>{children}</main>
-			<Footer isHomePage={isHomePage} switchPage={switchPage} />
+			<Footer isHomePage={isHomePage} />
 		</>
 	)
 }

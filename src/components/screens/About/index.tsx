@@ -8,10 +8,8 @@ const About: FC = () => {
 
 	return (
 		<Layout title='About' description='About Page'>
-			<div className={styles.about}>
-				<h1 className={isPageSwitching ? 'disappearance' : styles.about_text}>
-					NextJS Default App
-				</h1>
+			<div className={`${styles.about} screen`}>
+				<h1 className={isPageSwitching ? 'hide' : null}>NextJS Default App</h1>
 			</div>
 		</Layout>
 	)

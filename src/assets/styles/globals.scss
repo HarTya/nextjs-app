@@ -17,15 +17,37 @@ body {
 	overflow: hidden;
 }
 
-.disappearance {
-	pointer-events: none;
-	animation: Disappear 1s ease-in-out forwards;
-	@keyframes Disappear {
-		from {
-			opacity: 1;
+.screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+
+	> h1 {
+		animation: ShowHeading 2s ease-in-out forwards;
+		@keyframes ShowHeading {
+			0%,
+			50% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
 		}
-		to {
-			opacity: 0;
+		&.hide {
+			pointer-events: none;
+			animation: HideHeading 1s ease-in-out forwards;
+			@keyframes HideHeading {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
 		}
 	}
 }
