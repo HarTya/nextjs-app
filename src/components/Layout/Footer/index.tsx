@@ -1,34 +1,14 @@
-import axios, { AxiosError } from 'axios'
-import { API_STATUS } from 'config/api.config'
 import { COLORS } from 'config/color.config'
-import { FC, useState } from 'react'
-import { useQuery } from 'react-query'
+import { useStatus } from 'hooks/useStatus'
+import { FC } from 'react'
 import { useStore } from 'store'
-import { IStatus } from 'types/status.interface'
 import { IFooter } from './footer.interface'
 import styles from './Footer.module.scss'
 
 const Footer: FC<IFooter> = ({ isHomePage }) => {
 	const isPageSwitching = useStore(state => state.isPageSwitching)
 
-	const [status, setStatus] = useState('')
-
-	const { isLoading } = useQuery(
-		'status',
-		() => axios.get(API_STATUS).then(res => res.data),
-		{
-			onSuccess: (data: IStatus) => {
-				setStatus(data.message)
-			},
-			onError: (error: AxiosError) => {
-				if (axios.isAxiosError(error)) {
-					setStatus(error.message)
-				} else {
-					setStatus('Unknown Error')
-				}
-			}
-		}
-	)
+	const { isLoading, statusMessage } = useStatus()
 
 	return (
 		<div
@@ -42,7 +22,7 @@ const Footer: FC<IFooter> = ({ isHomePage }) => {
 				style={{ color: isHomePage ? COLORS.primary : COLORS.additional }}
 				className={styles.footer_text}
 			>
-				{isLoading ? 'Loading...' : status}
+				{isLoading ? 'Loading...' : statusMessage}
 			</span>
 		</div>
 	)
